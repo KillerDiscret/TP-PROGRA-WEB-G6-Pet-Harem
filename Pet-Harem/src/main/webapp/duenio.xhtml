@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<ui:composition template="master.xhtml">
+
+	<ui:define name="title">
+        .:Registro de Dueños:.
+    </ui:define>
+
+	<ui:define name="titleCont">
+		<span>Dueño</span>
+	</ui:define>
+
+	<ui:define name="content">
+		<h:form>
+			<h:outputLabel for="id" value="Id " styleClass="control-label" />
+
+			<p:inputText autocomplete="off" id="id"
+				styleClass="form-control" value="#{duenioController.duenio.idDuenio}"
+				required="true" />
+				
+			<h:outputLabel for="nombreDuenio" value="Nombre Duenio "
+				styleClass="control-label" />
+
+			<p:inputText autocomplete="off" id="nombreDuenio"
+				styleClass="form-control"
+				value="#{duenioController.duenio.nombreDuenio}" maxlength="25"
+				required="true" />
+
+
+			<h:outputLabel for="apellidoDuenio" value="Apellido Duenio "
+				styleClass="control-label" />
+
+			<p:inputText autocomplete="off" id="apellidoDuenio"
+				styleClass="form-control"
+				value="#{duenioController.duenio.apellidoDuenio}" maxlength="25"
+				required="true" />
+			
+			
+			<h:outputLabel for="dniDuenio" value="DNI Duenio "
+				styleClass="control-label" />
+
+			<p:inputText autocomplete="off" id="dniDuenio"
+				styleClass="form-control"
+				value="#{duenioController.duenio.dniDuenio}" maxlength="8"
+				required="true" />
+				
+				
+			<h:outputLabel for="distritoDuenio" value="Distrito Duenio "
+				styleClass="control-label" />
+
+			<p:inputText autocomplete="off" id="distritoDuenio"
+				styleClass="form-control"
+				value="#{duenioController.duenio.distritoDuenio}" maxlength="25"
+				required="true" />
+		
+		
+			<h:outputLabel for="celularDuenio" value="Celular Duenio "
+				styleClass="control-label" />
+
+			<p:inputText autocomplete="off" id="celularDuenio"
+				styleClass="form-control"
+				value="#{duenioController.duenio.celularDuenio}" maxlength="9"
+				required="true" />
+		
+		
+		
+			<br />
+
+
+			<p:commandButton value="Grabar"
+				actionListener="#{duenioController.insertar()}"
+				styleClass="btn btn-primary " update="@form"
+				action="listDuenio?faces-redirect=true" />
+			<p:commandButton value="Cancelar"
+				action="listDuenio?faces-redirect=true" immediate="true"
+				styleClass="btn btn-default" ajax="false" />
+
+			<p:growl id="growl" sticky="true" showDetail="true" life="3000" />
+
+		</h:form>
+	</ui:define>
+
+	<ui:define name="footerCont">
+
+	</ui:define>
+</ui:composition>
+</html>
