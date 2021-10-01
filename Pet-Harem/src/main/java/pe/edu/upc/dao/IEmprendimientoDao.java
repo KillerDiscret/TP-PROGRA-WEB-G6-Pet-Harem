@@ -9,3 +9,4 @@ public interface IEmprendimientoDao {
 	public List<Emprendimiento> listar();
 	public void eliminar(int idEmprendimiento);		
 }
+
